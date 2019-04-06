@@ -44,9 +44,6 @@ table {
 }
 /* End of Eric Meyer's CSS Reset */
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-	display: block;
-}
 body {
 	font: 12px/18px Arial, sans-serif;
 	width: 100%;
@@ -70,8 +67,9 @@ a.expand:hover {
 /* Header
 -----------------------------------------------------------------------------*/
 .header {
-	height: 150px;
-	background: #FFE680;
+	height: 189px;
+	background: transparent url("../images/header_bg.jpg") repeat center center;
+	background-size: cover;
 }
 
 
