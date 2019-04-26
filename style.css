@@ -1,3 +1,12 @@
+/*
+Theme Name: Rose
+Theme URI: домашняя-страница-темы
+Description: краткое-описание-темы
+Author: ваше-имя
+Author URI: ваш-URI
+Version: номер-версии--необязательное-поле
+*/
+
 /* Eric Meyer's CSS Reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -18,11 +27,6 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
 }
 body {
 	line-height: 1;
@@ -61,6 +65,7 @@ a.expand:hover {
 .wrapper {
 	width: 1200px;
 	margin: 0 auto;
+	font-family: "Arial";
 }
 
 
@@ -68,7 +73,7 @@ a.expand:hover {
 -----------------------------------------------------------------------------*/
 .header {
 	height: 189px;
-	background: transparent url("../images/header_bg.jpg") repeat center center;
+	background: transparent url("images/header_bg.jpg") repeat center center;
 	background-size: cover;
 }
 
@@ -76,20 +81,23 @@ a.expand:hover {
 /* Middle
 -----------------------------------------------------------------------------*/
 .middle {
-	border-left: 250px solid #B5E3FF;
 	position: relative;
+	padding-top: 30px;
 }
+
+/* Micro Clearfix - заставляет родительский элемент учитывать высоту плавающих контейнеров */
 .middle:after {
 	display: table;
 	clear: both;
 	content: '';
 }
+
 .container {
-	width: 100%;
-	float: left;
+	width: 950px;
 	overflow: hidden;
-	margin-right: -100%;
+	float: right;
 }
+
 .content {
 	padding: 0 20px;
 }
@@ -99,10 +107,11 @@ a.expand:hover {
 -----------------------------------------------------------------------------*/
 .left-sidebar {
 	float: left;
-	width: 250px;
+	width: 230px;
+	background: #0eb5d6;
 	position: relative;
-	background: #B5E3FF;
-	left: -250px;
+	padding: 17px 25px 0;
+	box-sizing: border-box;
 }
 
 
@@ -110,7 +119,14 @@ a.expand:hover {
 -----------------------------------------------------------------------------*/
 .footer {
 	height: 100px;
-	background: #BFF08E;
+	background: #f00800;
+	box-sizing: border-box;
+}
+
+.footer > p {
+	font-family: "Times New Roman", "serif";
+	font-size: 12.0pt;
+	margin: 30px 0 0 50px;
 }
 
 /* Styles from LP Motor
@@ -429,6 +445,185 @@ p {
 #wb_element_instance87 { top: 1712px; left: 0px; display: block; }
 #wb_element_instance88 { top: 70px; left: 0px; display: block; }
 
+/* Галерея */
+#wb_element_instance184 { top: 80px; left: 10px; min-width: 360px; width: 360px; min-height: 340px; height: 340px; display: block; z-index: 399; background: #ffffff; touch-action: manipulation; }
+#wb_element_instance184 .wb-picture-caption { background-color: rgba(0, 0, 0, 0.66); }
+#wb_element_instance184 .wb-lightbox-title { font-size: 20px; font: 20px; color: #FFFFFF; text-align: center; }
+#wb_element_instance184 .wb-lightbox-description { font-size: 16px; font: 16px; color: #FFFFFF; text-align: center; }
+
+.wb_gallery			{ background: #000; width: 100%; height: 100%; overflow: hidden; }
+#wb_gedit_name		{ width: 315px; }
+#wb_gedit_images	{
+	width: 466px; height: 300px; overflow: auto; overflow-y: scroll; background: #ffffff;
+}
+#wb_gedit_uploader	{ width: 120px; height: 64px; float: left; }
+#wb_gedit_uploader_state {
+	width: 336px; height: 64px; float: left; margin-left: 10px; overflow: auto;
+}
+
+.gallery-image		{
+	display: block;
+}
+
+.wb_thumb			{ position: relative; float: left; padding: 3px; }
+.wb_thumb img		{ max-width: none !important; }
+.wb_thumb > div			{ border: 1px solid #888; }
+.wb-thumbs-only > .wb_thumb { float: none; display: inline-block; vertical-align: top; }
+
+.gallery-slideshow  	{ width: 100%; height: 100%; }
+.gallery-slide-image{ position: relative; width: 100%; height: 100%; }
+.gallery-slide-left, .gallery-slide-right {
+	position: absolute; top: 50%;
+	width: 32px; height: 32px; line-height: 32px; margin-top: -16px;
+	font-size: 16px;
+	color: #FFF; text-shadow: #000 0 0 1px;
+	transition: color 0.2s linear 0s, text-shadow 0.2s linear 0s;
+	display: block; cursor: pointer; outline: none !important; text-align: center;
+}
+.gallery-slide-left	{
+	left: 0;
+}
+.gallery-slide-right {
+	right: 0;
+}
+.gallery-slide-left:hover	{ color: #DDD; text-shadow: #222 0 0 1px; }
+.gallery-slide-right:hover	{ color: #DDD; text-shadow: #222 0 0 1px; }
+
+.gallery-list		{ }
+.gallery-list-image	{ }
+.gallery-list-thumbs{ }
+.gallery-list-left .fa,
+.gallery-list-right .fa {
+	position: absolute; top: 50%;
+	font-size: 14px; line-height: 14px; margin-top: -7px;
+	color: #FFF; text-shadow: #000 0 0 1px;
+	transition: color 0.2s linear 0s, text-shadow 0.2s linear 0s;
+}
+.gallery-list-left:hover .fa, .gallery-list-right:hover .fa { color: #DDD; text-shadow: #222 0 0 1px; }
+.gallery-list-left .fa	{ left: 3px; }
+.gallery-list-right .fa	{ right: 3px; }
+.gallery-list .tmb-selected	{ background: #888; }
+
+.pswp .pswp__caption__center {
+	max-width: 700px;
+}
+.wb-picture-caption {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.66);
+	padding: 10px 10px 0;
+	transition: opacity 0.25s linear;
+	pointer-events: none;
+	touch-action: none;
+}
+.wb_thumb .wb-picture-caption {
+	padding-bottom: 0;
+}
+.wb-picture-caption.wb-on-hover {
+	opacity: 0;
+}
+.wb_thumb:hover .wb-picture-caption.wb-on-hover,
+.gallery-list:hover .wb-picture-caption.wb-on-hover,
+.gallery-slideshow:hover .wb-picture-caption.wb-on-hover {
+	opacity: 1;
+}
+.wb_thumb .wb-picture-caption .wb-lightbox-title {
+	font-size: 16px;
+}
+.wb-lightbox-title {
+	font-size: 20px;
+	color: #FFF;
+	margin: 0 0 10px;
+	text-align: center;
+}
+.wb-lightbox-title > a {
+	color: #FFF;
+	text-decoration: underline;
+}
+.wb-lightbox-title > a:hover {
+	color: #FFF;
+	text-decoration: none;
+}
+.wb-lightbox-description {
+	font-size: 14px;
+	color: #EEE;
+	text-align: center;
+	white-space: pre-wrap;
+	margin-bottom: 10px;
+}
+
+/* Меню */
+#wb_element_instance179 {
+	top: 0;
+	left: 0;
+	min-width: 1200px;
+	width: 1200px;
+	min-height: 42px;
+	height: 42px;
+	display: block;
+}
+
+#wb_element_instance179 > ul {
+	display: block;
+}
+
+#wb_element_instance51 { min-width: 1200px; width: 1200px; min-height: 42px; height: 42px; display: block; z-index: 1054; }
+#wb_element_instance51 > ul { display: block; }
+#wb_element_instance51 ul { background: #f00800 none repeat left top; border: 0 none #000000; }
+#wb_element_instance51, #wb_element_instance51 ul { text-align: left; }
+#wb_element_instance51 ul ul { background: #fa2c25 none repeat left top; }
+#wb_element_instance51 li { margin: 10px 10px 10px 10px; }
+#wb_element_instance51 li a { text-transform: none; border: 0 none #000000; padding: 2px 2px 2px 2px; font: normal bold 16px Arial,Helvetica,sans-serif; text-decoration: none; color: #000000; line-height: 18px; background: transparent none repeat left top; }
+#wb_element_instance51 li.over > a, #wb_element_instance51 li:focus > a {
+	border: 0 none #000000;
+	font: normal bold 16px Arial,Helvetica,sans-serif;
+	text-decoration: none;
+	color: #ffffff;
+	line-height: 18px;
+	background: transparent none repeat left top;
+}
+#wb_element_instance51 li.active > a { border: 0 none #000000; font: normal bold 16px Arial,Helvetica,sans-serif; text-decoration: none; color: #ffffff; line-height: 18px; background: transparent none repeat left top; }
+#wb_element_instance51:not(.collapse-expanded) .vmenu ul.open-left,#wb_element_instance51:not(.collapse-expanded) .hmenu ul.open-left { left: auto; right: 100%; }
+#wb_element_instance51:not(.collapse-expanded) .hmenu > li > ul.open-left { left: auto; right: 0; }
+
+.hmenu li.over > ul, .vmenu li.over > ul {
+	display: block;
+}
+
+.hmenu {
+	display: block;
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+	float: left;
+	width: 100%;
+	overflow: visible;
+}
+
+.hmenu li {
+	position: relative;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+}
+
+.hmenu > li > ul {left: 0;top: 100%;}
+
+.vmenu ul a, .hmenu ul a {white-space: nowrap;max-width: 320px;overflow: hidden;text-overflow: ellipsis;}
+
+.vmenu ul, .hmenu ul {
+	display: none;
+	position: absolute;
+	margin-left: 0;
+	padding-left: 0;
+	left: 100%;
+	top: 0;
+	z-index: 2;
+}
+
+/*  */
 #wb_element_instance192 { top: 2042px; left: 159px; display: block; z-index: 410; }
 #wb_element_instance192_cell_1 > div { width: 309px; }
 #wb_element_instance192_cell_2 > div { width: 361px; }
@@ -438,3 +633,81 @@ p {
 #wb_element_instance192_cell_6 > div { width: 361px; }
 #wb_element_instance192 td { background-color: transparent; border-top: 1px solid #000000; border-right: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; }
 #wb_element_instance192 td > div { padding: 2px; }
+
+
+/* Table */
+
+table {
+	font-size: 10.5pt;
+	font-family: "Arial","sans-serif";
+	mso-fareast-font-family: "Times New Roman";
+	color: black;
+	margin: auto;
+}
+
+td {
+	border: solid windowtext 1.0pt;
+	mso-border-alt: solid windowtext .5pt;
+	padding: 6.25pt 16.9pt 6.9pt 16.9pt;
+	vertical-align: middle;
+}
+
+ul.table-list{
+	list-style: disc;
+}
+
+/* Обтекание картинки */
+.left-aligning {
+	float: left; /* Выравнивание по левому краю */
+	margin: 7px 7px 7px 0; /* Отступы вокруг картинки */
+}
+
+.right-aligning {
+	float: right; /* Выравнивание по правому краю */
+	margin: 7px 7px 7px 0; /* Отступы вокруг картинки */
+}
+
+/* Текст абзацев */
+.wb-stl-normal {
+	font-size: 15px;
+	font-style: normal normal ;
+	font: normal normal 15px Tahoma,Geneva,sans-serif;
+	color: #030303;
+	text-decoration: none;
+	text-align: left;
+	line-height: 17px;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	text-transform: none;
+}
+
+/* Заголовок */
+.wb-stl-custom2 {
+    font-size: 18px;
+    font-style: normal normal;
+    font: normal normal 18px Tahoma,Geneva,sans-serif;
+    color: #000000;
+    text-decoration: none;
+    text-align: left;
+    line-height: 17px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    text-transform: uppercase;
+}
+
+/* Блок "Почему мы" на главной странице */
+.block > div {
+	width: 420px;
+	height: 280px;
+	/*border: 1px solid;*/
+
+}
+
+.block {
+	width: 900px;
+}
+
+.block > div > img {
+	display: block;
+	margin: 0 auto;
+}

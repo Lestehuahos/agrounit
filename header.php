@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title></title>
+    <title><?php wp_title('|', true, 'right'); ?></title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 
 <div class="wrapper">
 
@@ -27,3 +27,15 @@
             </div>
         </div>
     </div><!-- .header-->
+
+    <?php
+    wp_nav_menu(array(
+        'theme_location' => 'primary',
+        'container'       => 'div',
+        'container_class' => 'wb-menu',
+        'container_id'    => 'wb_element_instance51',
+        'menu_class'    => 'hmenu',
+        //'items_wrap' => 'left_menu',
+        //'menu_class' => 'left_menu',
+    ));
+    ?>

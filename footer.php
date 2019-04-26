@@ -1,8 +1,9 @@
 <div class="footer">
-    <p><br><span style="color:rgba(0,0,0,1);"><strong>© 2018 agrosouzplus.ru</strong></span></p>
+    <p><strong>© 2018 agrosouzplus.ru</strong></p>
 </div><!-- .footer -->
 
 </div><!-- .wrapper -->
 
+<?php wp_footer(); ?>
 </body>
 </html>

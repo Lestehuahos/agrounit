@@ -1,17 +1,22 @@
 <?php get_header(); ?>
 
-<div class="middle">
+<!--<div class="middle">-->
 
-    <div class="container">
-        <div class="content">
+    <div class="content">
             <?php the_post();?>
             <?php the_content();?>
-           </div><!-- .content-->
     </div><!-- .container-->
 
-    <div class="left-sidebar">
-    </div><!-- .left-sidebar -->
+    <!-- <div class="left-sidebar"> -->
+        <?php
+        /*wp_nav_menu(array(
+                'theme_location' => 'left_menu',
+                //'items_wrap' => 'left_menu',
+                //'menu_class' => 'left_menu',
+        ));*/
+        ?>
+    <!-- </div> -->
 
-</div><!-- .middle-->
+<!--</div>--><!-- .middle-->
 
 <?php get_footer()?>
